@@ -85,15 +85,11 @@ public class Principal
                 break;
                 case 8:
                 System.out.println("Ingrese el color del vehiculo: ");
-                String color=scan.nextLine();
-                /*for(int i=0;i<Vehiculo.vehiculos.length;i++){
-                 if(Vehiculo.vehiculos[i]==null){
-                 Vehiculo.vehiculos[i]=new Vehiculo("","","",0);
-                 }
-                }*/
+                String color=scan.next();
                 System.out.println(Vehiculo.toStringColor(color));
                 break;
                 case 9:
+                System.out.println("Los vehiculos ordenados por valor comercial tienen el siguiente orden:");
                 System.out.println(Vehiculo.ordenarValor());
                 break;
                 default:

@@ -64,36 +64,31 @@ public class Vehiculo
     public static String toStringColor(String color){
         String cadena="";
         for(int i=0;i<vehiculos.length;i++){
-         /*if(vehiculos[i]==null){
-             i++;
-            }*/
-         if(vehiculos[i].getColor().equalsIgnoreCase(color)){
+         if((vehiculos[i]!=null) && (vehiculos[i].getColor().equalsIgnoreCase(color))){
             cadena+="El vehiculo en la posicion "+i+" tiene la siguiente informacion: "+vehiculos[i].toString()+"\n";
            }
-         }
+        }
         return cadena;
-    }
+      }
     public static String ordenarValor(){
      String cadena="";
-     int temp;
+     Vehiculo temp;
      int n =vehiculos.length;
        for(int i=1;i<n;i++){
        for(int j=0;j<n-i;j++){
-       if(vehiculos[j].getvalorComercial()>vehiculos[j+1].getvalorComercial()){
-       int a=vehiculos[j+1].getvalorComercial();
-       int b=vehiculos[j].getvalorComercial();
-       temp=b;
-       b=a;
-       a=temp;
+       if((vehiculos[j]!=null) && (vehiculos[j].getvalorComercial()>vehiculos[j+1].getvalorComercial())){
+       temp=vehiculos[j];
+       vehiculos[j]=vehiculos[j+1];
+       vehiculos[j+1]=temp;
 
-    }
-    }
-    }
-    for(int i=0; i<n; i++){
-     cadena+=vehiculos[i];
+      }
+      }
      }
-    return cadena;
-   }
+     for(int i=0; i<n; i++){
+      cadena+=vehiculos[i];
+     }
+     return cadena;
+    }
 }
         
   
