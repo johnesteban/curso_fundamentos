@@ -46,16 +46,16 @@ public class Vehiculo
         return this.valorComercial;
     }
     public String toString(){
-        return "Placa: "+this.getPlaca()+", Marca: "+this.getMarca()+", Color: "+this.getColor()+", Valor comercial: "+this.getvalorComercial();
+        return "Placa:"+this.getPlaca()+", Marca:"+this.getMarca()+", Color:"+this.getColor()+", Valor comercial:"+this.getvalorComercial();
     }
-    
     public static String toStringVehiculos(){
         String cadena="";
         for(int i=0;i<vehiculos.length;i++){
             if(vehiculos[i]!=null){
-                cadena+="El vehiculo en la posicion "+i+" tiene la siguiente informacion: "+vehiculos[i].toString()+"\n";
+                cadena+="**El vehiculo en la posicion "+i+" tiene la siguiente informacion"+"\n"+vehiculos[i].toString()+"\n";
             }
         }
+        cadena=cadena.substring(0,cadena.length()-1);
         return cadena;
     }
     public static int cantidadVehiculos(){
@@ -63,32 +63,46 @@ public class Vehiculo
     }
     public static String toStringColor(String color){
         String cadena="";
+        int j=0;
         for(int i=0;i<vehiculos.length;i++){
          if((vehiculos[i]!=null) && (vehiculos[i].getColor().equalsIgnoreCase(color))){
-            cadena+="El vehiculo en la posicion "+i+" tiene la siguiente informacion: "+vehiculos[i].toString()+"\n";
-           }
+            cadena+="**El vehiculo en la posicion "+i+" tiene la siguiente informacion"+"\n"+vehiculos[i].toString()+"\n";
+            j++;
+         }
         }
+        if(j==0){
+            cadena="No existen vehiculos con el color ingresado ";
+        }
+        cadena=cadena.substring(0,cadena.length()-1);
         return cadena;
-      }
+    }
     public static String ordenarValor(){
      String cadena="";
      Vehiculo temp;
-     int n =vehiculos.length;
-       for(int i=1;i<n;i++){
-       for(int j=0;j<n-i;j++){
-       if((vehiculos[j]!=null) && (vehiculos[j].getvalorComercial()>vehiculos[j+1].getvalorComercial())){
-       temp=vehiculos[j];
-       vehiculos[j]=vehiculos[j+1];
-       vehiculos[j+1]=temp;
-
-      }
+     int n=vehiculos.length;
+     int posmenor;
+     for(int i=0;i<n-1;i++){
+     posmenor=i;
+      if(vehiculos[i]!=null){
+       for(int j=i+1;j<n;j++){
+       if((vehiculos[j]!=null) && (vehiculos[j].getvalorComercial()<vehiculos[posmenor].getvalorComercial())){
+       posmenor=j;
+       }
       }
      }
+     temp=vehiculos[i];
+     vehiculos[i]=vehiculos[posmenor];
+     vehiculos[posmenor]=temp;
+     }
      for(int i=0; i<n; i++){
-      cadena+=vehiculos[i];
+      if(vehiculos[i]!=null){
+      cadena+=vehiculos[i].toString()+"\n";
+     }
      }
      return cadena;
     }
-}
+  
+  }
+ 
         
   

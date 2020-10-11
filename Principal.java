@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Principal
  {
       
-       public static void main(String[]args){ 
+      public static void main(String[]args){ 
        Principal.mostrarMenu();
       }
       public static void mostrarMenu(){
@@ -72,11 +72,19 @@ public class Principal
                 System.out.println(Vehiculo.toStringVehiculos());
                 break;
                 case 5:
+                if(Vehiculo.cantidadVehiculos()==0){
+                 System.out.println("Aun no hay vehiculos parqueados");
+                }
+                else{
                 System.out.println("La cantidad de vehiculos que han sido parqueados son: "+Vehiculo.cantidadVehiculos());
+                }
                 break;
                 case 6:
                 System.out.println("Ingrese el número del espacio que desea consultar: ");
                 int espacio=scan.nextInt();
+                /*if(Sensor.sensores[espacio]==null){
+                   Sensor.sensores[espacio]=new Sensor(0);
+                }*/
                 System.out.println(Sensor.sensores[espacio].toString());
                 break;
                 case 7:
@@ -98,7 +106,7 @@ public class Principal
             }
             System.out.println("Ingrese nuevamente una opcion: ");
             opcion=scan.nextInt();
-            }
+          }
             
         }
 }
