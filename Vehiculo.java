@@ -70,7 +70,7 @@ public class Vehiculo
             }
         }
         if(j==0){
-            cadena=("Aun no hay vehiculos parqueados");
+            cadena="Aun no hay vehiculos parqueados";
         }
         cadena=cadena.substring(0,cadena.length()-1);
         return cadena;
@@ -119,9 +119,9 @@ public class Vehiculo
                 cadena+=vehiculos[i].toString()+"\n";
             }
         }
+        cadena=cadena.substring(0,cadena.length()-1);
         return cadena;
     }
 
 }
 
-  

@@ -6,6 +6,7 @@ public class Principal
     public static void main(String[]args){
         System.out.println("***********************************************************************");
         System.out.println("*                              MENU                                   *");
+        System.out.println("* 0-Salir del programa                                                *");
         System.out.println("* 1-Mostrar las posiciones libres del parqueadero                     *");
         System.out.println("* 2-Agregar un nuevo vehiculo omitiendo el valor comercial            *");
         System.out.println("* 3-Agregar un nuevo vehiculo sin omitir el valor comercial           *");
@@ -15,7 +16,7 @@ public class Principal
         System.out.println("* 7-Mostrar el estado de todos los sensores                           *");
         System.out.println("* 8-Mostrar la informacion de los vehiculos de un color ingresado     *");
         System.out.println("* 9-Mostrar los vehiculos parqueados ordenados por su valor comercial *");
-        System.out.println("***********************************************************************");
+        System.out.println("***********************************************************************"+"\n");
         Principal.mostrarMenu();
     }
 
@@ -25,7 +26,6 @@ public class Principal
         int espacios=scan.nextInt();
         Vehiculo.vehiculos=new Vehiculo[espacios];
         Sensor.sensores=new Sensor[espacios];
-
         System.out.println("Ingrese la opcion que desea: ");
         int opcion=scan.nextInt();
         while(opcion!=0){
@@ -89,7 +89,7 @@ public class Principal
                     System.out.println("Aun no hay vehiculos parqueados");
                 }
                 else{
-                    System.out.println("La cantidad de vehiculos que han sido parqueados son: "+Vehiculo.cantidadVehiculos());
+                    System.out.println("La cantidad de vehiculos que han sido parqueados es: "+Vehiculo.cantidadVehiculos());
                 }
                 break;
                 case 6:
@@ -118,7 +118,7 @@ public class Principal
                     System.out.println("Aun no hay vehiculos parqueados");
                 }
                 else{
-                System.out.println("Los vehiculos ordenados de menor a mayor segun su valor comercial tienen el siguiente orden:"+"\n"+Vehiculo.ordenarValor());
+                    System.out.println("Los vehiculos ordenados de menor a mayor segun su valor comercial tienen el siguiente orden:"+"\n"+Vehiculo.ordenarValor());
                 }
                 break;
                 default:
@@ -132,4 +132,3 @@ public class Principal
     }
 }
 
-       
