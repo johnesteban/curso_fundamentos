@@ -31,7 +31,7 @@ public class Principal
         while(opcion!=0){
             switch(opcion){
                 case 1:
-                System.out.println("Las posiciones del parqueadero libres son:"+"\n"+Sensor.sensorLibre());
+                System.out.println(Sensor.sensorLibre());
                 break;
                 case 2:
                 System.out.println("Ingrese el espacio donde desea parquear: ");

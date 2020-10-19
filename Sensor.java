@@ -29,11 +29,16 @@ public class Sensor
     }
 
     public static String sensorLibre(){
-        String numcadena="";
+        String numcadena="Las posiciones libres del parqueadero son:"+"\n";
+        int j=0;
         for(int i=0;i<sensores.length;i++){
             if(sensores[i]==null){
                 numcadena+=i+"\n"; 
+                j++;
             }
+        }
+        if(j==0){
+            numcadena="No existen posiciones libres ";
         }
         numcadena=numcadena.substring(0,numcadena.length()-1);
         return numcadena;
